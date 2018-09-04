@@ -91,7 +91,7 @@ class _CalendarState extends State<Calendar> {
 
     if (widget.showTodayAction) {
       leftInnerIcon = new InkWell(
-        child: new Text('Today'),
+        child: new Text('今天'),
         onTap: resetToToday,
       );
     } else {
@@ -311,6 +311,7 @@ class _CalendarState extends State<Calendar> {
 
   Future<Null> selectDateFromPicker() async {
     DateTime selected = await showDatePicker(
+      locale: Locale('zh'),
       context: context,
       initialDate: _selectedDate ?? new DateTime.now(),
       firstDate: new DateTime(1960),
